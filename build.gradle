@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.4'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'ru.demetriuzz.sb'
+version = '1.0.0-SNAPSHOT-1'
+
+repositories {
+    mavenLocal() // сначала поиск локально
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+jar {
+    enabled = false
+}
+
+bootJar {
+    archiveFileName = "${project.name}.jar"
+}
+
+dependencyManagement {
+    imports {
+        // внутри POM
+        // 'org.springframework.boot:spring-boot-dependencies'
+        // 'org.springframework.cloud:spring-cloud-dependencies'
+        mavenBom 'ru.demetriuzz.sb:sb-starter:1.0.0-SNAPSHOT-1'
+    }
+}
+
+dependencies {
+    implementation 'ru.demetriuzz.sb:sb-starter:1.0.0-SNAPSHOT-1'
+
+    // подключение обработки аннотаций для процесса компиляции
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // тестирование
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
