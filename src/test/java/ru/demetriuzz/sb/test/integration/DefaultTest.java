@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import ru.demetriuzz.sb.SbApplication;
 import ru.demetriuzz.sb.service.SbApplicationProcessingService;
-import ru.demetriuzz.sb.service.SbProcessingService;
+import ru.demetriuzz.sb.starter.service.SbProcessingService;
 
 @DirtiesContext
 @SpringBootTest(classes = {SbApplication.class})

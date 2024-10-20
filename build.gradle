@@ -30,13 +30,12 @@ dependencyManagement {
     imports {
         // внутри POM
         // 'org.springframework.boot:spring-boot-dependencies'
-        // 'org.springframework.cloud:spring-cloud-dependencies'
-        mavenBom 'ru.demetriuzz.sb:sb-starter:1.0.0-SNAPSHOT-1'
+        mavenBom 'ru.demetriuzz.sb.starter:sb-starter:1.0.0-SNAPSHOT-1'
     }
 }
 
 dependencies {
-    implementation 'ru.demetriuzz.sb:sb-starter:1.0.0-SNAPSHOT-1'
+    implementation 'ru.demetriuzz.sb.starter:sb-starter:1.0.0-SNAPSHOT-1'
 
     // подключение обработки аннотаций для процесса компиляции
     annotationProcessor 'org.projectlombok:lombok'

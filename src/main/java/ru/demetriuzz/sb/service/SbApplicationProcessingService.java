@@ -1,6 +1,7 @@
 package ru.demetriuzz.sb.service;
 
 import lombok.extern.slf4j.Slf4j;
+import ru.demetriuzz.sb.starter.service.SbProcessingService;
 
 /**
  * Основной класс запуска процесса обработки, реализация базового интерфейса
@@ -13,13 +14,8 @@ public class SbApplicationProcessingService implements SbProcessingService {
     }
 
     @Override
-    public void init() {
-        log.info("init");
-    }
-
-    @Override
-    public void process() {
-        log.info("process");
+    public void execute() {
+        log.info("execute");
     }
 
 }
